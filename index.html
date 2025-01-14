@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissors</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div id="game-container">
+    <!-- Titel -->
+    <h1 id="title">Rock Paper Scissors</h1>
+
+    <!-- Buttons -->
+    <div id="button-container">
+        <button class="choice-button" id="rock-btn"></button>
+        <button class="choice-button" id="paper-btn"></button>
+        <button class="choice-button" id="scissors-btn"></button>
+    </div>
+
+    <!-- Ergebnisse und Punktestand -->
+    <div id="result">
+        <p id="outcome">Choose an option to play!</p>
+        <div id="score">
+            <p id="wins">Wins: 0</p>
+            <p id="losses">Losses: 0</p>
+        </div>
+    </div>
+
+    <!-- Neustart-Button -->
+    <button id="restart-btn">Restart</button>
+
+    <!-- Rundenanzeige -->
+    <div id="rounds">
+        <p id="rounds-count">Round: 0</p>
+    </div>
+</div>
+<script src="index.js"></script>
+</body>
+</html>
