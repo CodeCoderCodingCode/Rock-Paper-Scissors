@@ -176,8 +176,11 @@ body {
     100% { transform: scale(1); opacity: 0.8; }
 }
 #game-container.win {
-    animation: winEffect 1s ease-out;
+    animation: winEffect 1.5s ease-out forwards; /* Verwende `forwards` */
 }
+
+
+
 
 @keyframes winTextEffect {
     0% { font-size: 1.5rem; color: #fff; opacity: 0; }
@@ -196,7 +199,7 @@ body {
     100% { transform: translateX(0); }
 }
 #game-container.lose {
-    animation: loseEffect 0.5s ease-in-out;
+    animation: loseEffect 0.5s ease-in-out forwards; /* Verwende `forwards` */
 }
 
 @keyframes loseTextEffect {

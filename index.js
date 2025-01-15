@@ -52,7 +52,7 @@ function playRound(playerChoice) {
         scissorsBtn.disabled = true;
         if (playerWins === 5) {
         playerWin();
-        } else {
+        } else{
         playerLoose();
         }
 }}
@@ -88,14 +88,11 @@ function playerWin() {
     // Ausgabe des Ergebnisses
     outcomeText.textContent = "You Win!";
 
-    // Optional: Ton abspielen
-    var winSound = new Audio('path_to_win_sound.mp3');
-    winSound.play();
-
-    // Entferne den Win-Effekt nach der Animation (1.5 Sekunden)
-    setTimeout(() => {
+    // Entferne den Win-Effekt nach der Animation mit dem `animationend`-Event
+    gameContainer.addEventListener("animationend", function handleWinAnimation() {
         gameContainer.classList.remove("win");
-    }, 1500); // Zeit, die der Effekt dauert
+        gameContainer.removeEventListener("animationend", handleWinAnimation);
+    });
 }
 
 // Wenn der Spieler verliert:
@@ -106,15 +103,13 @@ function playerLoose() {
     // Ausgabe des Ergebnisses
     outcomeText.textContent = "You Lose!";
 
-    // Optional: Ton abspielen
-    var loseSound = new Audio('path_to_lose_sound.mp3');
-    loseSound.play();
-
-    // Entferne den Lose-Effekt nach der Animation (0.5 Sekunden)
-    setTimeout(() => {
+    // Entferne den Lose-Effekt nach der Animation mit dem `animationend`-Event
+    gameContainer.addEventListener("animationend", function handleLoseAnimation() {
         gameContainer.classList.remove("lose");
-    }, 500); // Zeit, die der Effekt dauert
+        gameContainer.removeEventListener("animationend", handleLoseAnimation);
+    });
 }
+
 
 // Wenn es ein Unentschieden gibt:
 function draw() {
